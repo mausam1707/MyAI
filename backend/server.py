@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, jsonify
 import cohere
 from config import COHERE_API_KEY
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static')
 co = cohere.Client(COHERE_API_KEY)
 
 @app.route("/")
@@ -26,4 +26,4 @@ def chat():
     return jsonify({"reply": answer})
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)  # accessible on mobile too
+    app.run(host="0.0.0.0", port=5000, debug=False)  # accessible on mobile too

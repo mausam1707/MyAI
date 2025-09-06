@@ -3,14 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Chatbot</title>
+  <title>ResAI</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}?v=2" type="image/png">
+
+
 </head>
 <body>
   <button id="theme-toggle">🌙 Dark Mode</button>
 
   <div class="chat-container">
-    <h2>My Chatbot</h2>
+    <h2>Ask your Query</h2>
     <div id="chat-box"></div>
     <div class="input-area">
       <input type="text" id="message" placeholder="Type your question..." />

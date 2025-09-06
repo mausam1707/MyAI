@@ -76,7 +76,7 @@ button:hover {
   background: #0056b3;
 }
 
-body.dark-mode {
+/* body.dark-mode {
     background-color: #222;
     color: white;
 }
@@ -91,5 +91,43 @@ body.dark-mode .bot-message {
 
 body.dark-mode .user-message {
     background-color: #1e90ff;
+} */
+
+body.light-mode {
+    background-color: #f8f9fa;
+    color: #000;
+}
+
+body.light-mode .chat-container {
+    background-color: #fff;
+    color: #000;
+}
+
+body.light-mode .input-container input {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #ccc;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #1e1e1e;
+    color: #fff;
+}
+
+body.dark-mode .chat-container {
+    background-color: #4e834e;
+    color: #f1f1f1;
+}
+
+body.dark-mode .input-container input {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+body.dark-mode .input-container button {
+    background-color: #007bff;
+    color: #fff;
 }
 

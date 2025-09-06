@@ -1,6 +1,5 @@
 let userName = null;
 
-// Show message in chatbox
 function displayMessage(text, sender) {
   const chatBox = document.getElementById("chat-box");
   const msgDiv = document.createElement("div");
@@ -10,7 +9,6 @@ function displayMessage(text, sender) {
   chatBox.scrollTop = chatBox.scrollHeight;
 }
 
-// Typing indicator
 function showTyping() {
   const chatBox = document.getElementById("chat-box");
   const typingDiv = document.createElement("div");
@@ -33,23 +31,22 @@ async function sendMessage() {
   const userMessage = msgInput.value.trim();
   if (!userMessage) return;
 
-  // Show user message
   displayMessage(userMessage, "user");
   msgInput.value = "";
 
-  // Show typing indicator
   const typingDiv = showTyping();
-
-  // Wait at least 1 second before bot responds
   await new Promise(resolve => setTimeout(resolve, 1000));
 
   if (!userName) {
-    // Remove typing
     typingDiv.remove();
 
-    // First message is name
-    userName = userMessage;
-    displayMessage(`${getGreeting()}, ${userName}! 😊 How can I help you today?`, "bot");
+    // Force name first, no guessing
+    if (userMessage.split(" ").length === 1 && /^[a-zA-Z]+$/.test(userMessage)) {
+      userName = userMessage;
+      displayMessage(`${getGreeting()}, ${userName}! 😊 How can I help you today?`, "bot");
+    } else {
+      displayMessage("I just need your *name* first 🙂 Could you please type your name?", "bot");
+    }
     return;
   }
 
@@ -61,10 +58,7 @@ async function sendMessage() {
     });
     const data = await res.json();
 
-    // Remove typing
     typingDiv.remove();
-
-    // Show bot response
     displayMessage(data.reply, "bot");
   } catch (err) {
     typingDiv.remove();
@@ -72,18 +66,15 @@ async function sendMessage() {
   }
 }
 
-// Button click
 document.getElementById("sendBtn").addEventListener("click", sendMessage);
-
-// Enter key
 document.getElementById("message").addEventListener("keypress", function (e) {
   if (e.key === "Enter") sendMessage();
 });
 
-// On first load
 window.onload = function () {
   displayMessage("Hi there! 👋 What's your name?", "bot");
 };
+
 
 document.getElementById("theme-toggle").addEventListener("click", function() {
     document.body.classList.toggle("dark-mode");

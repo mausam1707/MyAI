@@ -75,3 +75,21 @@ button {
 button:hover {
   background: #0056b3;
 }
+
+body.dark-mode {
+    background-color: #222;
+    color: white;
+}
+
+body.dark-mode .chat-container {
+    background-color: #333;
+}
+
+body.dark-mode .bot-message {
+    background-color: #555;
+}
+
+body.dark-mode .user-message {
+    background-color: #1e90ff;
+}
+

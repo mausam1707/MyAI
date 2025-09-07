@@ -29,6 +29,11 @@ def chat():
             'Mausam Chaudhary is the creator and developer of this AI chatbot, Veda. '
             'You can visit his LinkedIn profile from the link given in bottom.'
         )
+    elif "who is mausam" in text:
+        answer = (
+            'Mausam Chaudhary is the creator and developer of this AI chatbot, Veda. '
+            'You can visit his LinkedIn profile from the link given in bottom.'
+        )
 
     else:
         try:

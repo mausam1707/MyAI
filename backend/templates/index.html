@@ -22,6 +22,18 @@
   </div>
 
   <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <script>
+  window.addEventListener("beforeunload", function (e) {
+    // Custom message for modern browsers
+    const confirmationMessage = "Your chat will be deleted after reload. Do you want to reload?";
+    
+    // Most browsers ignore the custom message, but it will still show a default confirmation
+    e.preventDefault();
+    e.returnValue = confirmationMessage; 
+    return confirmationMessage;
+  });
+</script>
+
   <footer>
   Created by <a href="https://www.linkedin.com/in/mausam-chaudhary1611/" target="_blank">Mausam Chaudhary</a> — 
   Veda is a smart AI powered chatbot tool designed to simplify conversations, tasks, and everyday problem-solving.

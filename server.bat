@@ -9,7 +9,7 @@ REM ====== CHANGE THIS PATH TO YOUR PROJECT FOLDER ======
 cd /d C:\Users\HP\Desktop\MyAI\backend
 
 REM ====== RUN FLASK APP in background (same CMD window stays) ======
-start /b python server.py
+start /b python memory_saver.py
 
 REM ====== WAIT 3 SECONDS ======
 timeout /t 5 /nobreak >nul

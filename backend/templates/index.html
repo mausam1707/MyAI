@@ -9,11 +9,19 @@
 
 
 </head>
+<div style="background: #f1f1f1; padding: 8px; text-align: center; font-size: 15px; color: #333; border-radius: 6px; margin: 5px 0;">
+    🚀 <strong>Version 0.2</strong> is now live. Veda will remember your chats.
+</div>
+
+
 <body>
   <button id="theme-toggle">🌙 Dark Mode</button>
 
   <div class="chat-container">
-    <h2>Ask your Query to Veda</h2>
+    <h2>
+  <img src="{{ url_for('static', filename='veda.png') }}" alt="Veda Logo" style="height:50px; vertical-align:middle; margin-right:8px;">
+  Ask your Query to Veda
+  </h2> 
     <div id="chat-box"></div>
     <div class="input-area">
       <input type="text" id="message" placeholder="Type your question..." />
@@ -35,7 +43,7 @@
 </script>
 
   <footer>
-  Version:0.0.1 || Created by <a href="https://www.linkedin.com/in/mausam-chaudhary1611/" target="_blank">Mausam Chaudhary</a> — 
+  Version:0.2 || Created by <a href="https://www.linkedin.com/in/mausam-chaudhary1611/" target="_blank">Mausam Chaudhary</a> — 
   Veda is a smart AI powered chatbot tool designed to simplify conversations, tasks, and everyday problem-solving.
 </footer>
 

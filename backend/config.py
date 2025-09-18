@@ -1,4 +1,4 @@
 # backend/config.py
 
 # Replace with your actual Cohere API key
-COHERE_API_KEY = "5UjarSV3J4Jh0YHarm2BAYceZpFfqg3Njel8VvMo"
+COHERE_API_KEY = "RIfW1NPWKtKlErODkSaXYI8JsmD2L6oGL7mmwrkS"

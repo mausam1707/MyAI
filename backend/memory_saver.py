@@ -56,7 +56,7 @@ def chat():
             response = co.chat(
                 chat_history=[{"role": msg["role"], "message": msg["message"]} for msg in conversation_history],
                 message=user_message,
-                model="command-r",
+                model="command-a-03-2025",
                 temperature=0.3
             )
             answer = response.text
